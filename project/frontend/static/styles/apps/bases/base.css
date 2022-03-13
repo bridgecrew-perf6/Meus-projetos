@@ -8,4 +8,8 @@
 #container{
     width: 100vw;
     min-height: 100vh;
+    background-color: #fafafa;
+    max-width: 768px;
+    margin: 0 auto;
+    padding-inline: 10%;
 }
