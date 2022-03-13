@@ -5,6 +5,5 @@ from django.db.models import (Model, CharField, DateTimeField, TextField, EmailF
 class Category(Model):
     name = CharField(max_length=128)
     slug = SlugField(max_length=256)
-    project_img = ImageField(upload_to='project/%Y/%m/%d')
-    project_url = TextField(blank=True, null=True)
-    github_url = TextField()
+    img = ImageField(upload_to='project/%Y/%m/%d')
+
