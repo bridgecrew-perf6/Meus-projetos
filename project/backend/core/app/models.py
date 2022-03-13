@@ -4,9 +4,15 @@ from backend.categories import Category
 
 
 class Project(Model):
-    name = CharField(max_length=128)
-    slug = SlugField(max_length=256)
-    img = ImageField(upload_to='project/%Y/%m/%d')
-    project_url = TextField(blank=True, null=True)
-    github_url = TextField()
-    category = ForeignKey(Category, on_delete=CASCADE)
+    name = CharField(verbose_name='Nome', max_length=128)
+    slug = SlugField(verbose_name='Url', max_length=256)
+    img = ImageField(verbose_name='Img', upload_to='project/%Y/%m/%d')
+    project_url = TextField(verbose_name='Url do projeto', blank=True, null=True)
+    github_url = TextField(verbose_name='Url do Github')
+    category = ForeignKey(Category, on_delete=CASCADE, verbose_name='Categoria')
+
+    class Meta:
+        verbose_name = 'Projeto'
+        verbose_name_plural = 'Projetos'
+
+
