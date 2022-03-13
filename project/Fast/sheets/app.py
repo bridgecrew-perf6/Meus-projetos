@@ -92,5 +92,5 @@ class DjangoApp(Base, AppAdmin, AppModels, AppSettings, AppViews, AppTests, AppF
     def add_abstract_user_import(self):
         init = Editor(self.path, '__init__.py')
         init.add_in_end([
-            'from app.models import User\n',
+            'from .app.models import User\n',
         ])
