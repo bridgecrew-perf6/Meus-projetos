@@ -1,23 +1,21 @@
-{% extends 'bases/default.html' %}
+{% extends 'bases/category.html' %}
 
 {% block links %}
 <link rel="stylesheet" href="/static/styles/apps/core/index.css">
 {% endblock %}
 
 {% block body %}
-<header class="code">
-    <img src="/media/layouts/code-bg.jpg" alt="code-img-header" class="code-img">
-</header>
 <main>
     <h1 class="title">MEUS PROJETOS</h1>
     <div class="categories-container">
-        <div class="category-box">
-            <img src="/media/categories/python.png" alt="category-img" class="category-img">
-            <h2 class="category-title">Python</h2>
-        </div>
+        {% for category in categories %}
+        <a class="category-box" href="/categorias/{{ category.slug }}">
+            <div class="category-img-box">
+                <img src="{{ category.img.url }}" alt="category-img" class="category-img">
+            </div>
+            <h2 class="category-title">{{ category.name }}</h2>
+        </a>
+        {% endfor %}
     </div>
 </main>
-
-
-
 {% endblock %}

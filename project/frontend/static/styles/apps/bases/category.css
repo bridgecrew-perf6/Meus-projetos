@@ -1,0 +1,48 @@
+header.code {
+    height: 5rem;
+}
+
+header.code img {
+    display: block;
+    height: 5rem;
+    width: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+    max-width: 860px;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+footer {
+    margin: 0 auto;
+    padding-inline: 10%;
+    margin: 0 auto;
+    max-width: 860px;
+}
+
+.footer-text {
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding-block: 0.36rem;
+    font-size: 0.8rem;
+}
+
+.footer-text span {
+    background-color: black;
+}
+
+@media(max-width: 540px){
+    #container, footer{
+        padding-inline: 0;        
+    }
+    main {
+        padding-inline: 5%;
+    }
+}

@@ -1,16 +1,3 @@
-header.code {
-    height: 5rem;
-}
-
-header.code img {
-    display: block;
-    height: 5rem;
-    width: 100%;
-    object-fit: cover;
-    margin: 0 auto;
-    max-width: 768px;
-}
-
 .title{
     text-align: center;
     padding-block: 1.5rem;
@@ -27,6 +14,9 @@ header.code img {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     margin-bottom: 2rem;
     margin-inline: 0.5rem;
+    padding-inline: 0.8rem;
+    padding-top: 0.8rem;
+    color: black;
 }
 
 .category-img {
@@ -39,15 +29,6 @@ header.code img {
     text-align: center;
     font-size: 1.4rem;
     padding-block: 0.6rem;
-}
-
-@media(max-width: 540px){
-    #container{
-        padding-inline: 0;        
-    }
-    main {
-        padding-inline: 5%;
-    }
 }
 
 @media(max-width: 350px){
