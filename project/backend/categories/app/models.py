@@ -7,6 +7,8 @@ class Category(Model):
     slug = SlugField(verbose_name='Url', max_length=256)
     img = ImageField(verbose_name='Img', upload_to='project/%Y/%m/%d')
 
+    def __str__(self):
+        return self.name
     
     class Meta:
         verbose_name = 'Categoria'

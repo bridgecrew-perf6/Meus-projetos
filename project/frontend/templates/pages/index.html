@@ -7,13 +7,13 @@
 {% block body %}
 <main>
     <h1 class="title">MEUS PROJETOS</h1>
-    <div class="categories-container">
+    <div class="box-container">
         {% for category in categories %}
-        <a class="category-box" href="/categorias/{{ category.slug }}">
-            <div class="category-img-box">
-                <img src="{{ category.img.url }}" alt="category-img" class="category-img">
+        <a class="box" href="/categorias/{{ category.slug }}">
+            <div class="box-img-container">
+                <img src="{{ category.img.url }}" alt="category-img" class="box-img">
             </div>
-            <h2 class="category-title">{{ category.name }}</h2>
+            <h2 class="box-title">{{ category.name }}</h2>
         </a>
         {% endfor %}
     </div>

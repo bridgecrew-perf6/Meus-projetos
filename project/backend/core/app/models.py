@@ -11,6 +11,9 @@ class Project(Model):
     github_url = TextField(verbose_name='Url do Github')
     category = ForeignKey(Category, on_delete=CASCADE, verbose_name='Categoria')
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name = 'Projeto'
         verbose_name_plural = 'Projetos'

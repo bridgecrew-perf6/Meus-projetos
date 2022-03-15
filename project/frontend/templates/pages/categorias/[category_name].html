@@ -1,8 +1,26 @@
 {% extends 'bases/category.html' %}
 
+{% block links %}
+<link rel="stylesheet" href="/static/styles/apps/categories/category_name.css">
+{% endblock %}
+
 {% block body %}
 <main>
-    <h1>{{ category.name }}</h1>
+    <nav class="bar-navigation">
+        <a href="/">Projetos</a> &gt; <a href="/categorias/{{ category.slug }}">{{ category.name }}</a>
+    </nav>
+
+
+    <div class="box-container">
+        {% for project in projects %}
+            <a class="box" href="/categorias/{{ project.slug }}">
+                <div class="box-img-container">
+                    <img src="{{ project.img.url }}" alt="project-img" class="box-img">
+                </div>
+                <h2 class="box-title">{{ project.name }}</h2>
+            </a>
+        {% endfor %}
+    </div>
 
 </main>
 {% endblock %}
