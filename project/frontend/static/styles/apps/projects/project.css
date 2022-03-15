@@ -1,0 +1,30 @@
+.title {
+    font-size: 1.1rem;
+}
+
+.img-project {
+    padding-block: 1.2rem;
+}
+
+.img-project img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    padding-block: 0.4rem;
+    border-top: 0.2px solid #ccc;
+}
+
+.project-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.project-name {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-top: 0.2rem;
+    display: block;
+}

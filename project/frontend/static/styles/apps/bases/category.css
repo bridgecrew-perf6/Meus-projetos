@@ -1,3 +1,7 @@
+#container {
+    padding-bottom: 7vh;
+}
+
 header.code {
     height: 5rem;
 }
@@ -30,11 +34,16 @@ footer {
     background-color: black;
     text-align: center;
     color: white;
-    padding-block: 0.36rem;
     font-size: 0.8rem;
+    min-height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-text span {
+    width: 100%;
+    text-align: center;
     background-color: black;
 }
 

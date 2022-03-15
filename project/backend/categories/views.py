@@ -11,9 +11,9 @@ BP = 'pages/' # base path
 
 def category_view(request, category_slug):
     category = get_object_or_404(Category, slug=category_slug)
-    projects = Project.objects.all()
+    projects = Project.objects.filter(category__slug=category_slug)
     context = jsObj({
         'category',
         'projects',
     }, vars())
-    return render(request, f'{BP}/categorias/[category_name].html', context)
+    return render(request, f'{BP}/categorias/[category_slug].html', context)

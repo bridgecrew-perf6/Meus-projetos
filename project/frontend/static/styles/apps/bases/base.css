@@ -9,7 +9,7 @@
 
 #container{
     width: 100vw;
-    min-height: 100vh;
+    min-height: -webkit-fill-available;
     max-width: 860px;
     margin: 0 auto;
     padding-inline: 10%;

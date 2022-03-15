@@ -1,0 +1,8 @@
+.bar-navigation {
+    padding-block: 0.4rem 1.2rem;
+}
+
+.bar-navigation a{
+    color: black;
+    font-size: 0.8rem;
+}
