@@ -1,10 +1,12 @@
 # this module
 from .functions_dict import filters_functions
+from .exceptions import DataCacheNotCreated
 # others
 from datetime import datetime
 from collections.abc import Mapping
 from typing import Any
-
+# django
+from django.core.cache import cache
 
 
 def simplification(obj_name: str):
@@ -61,3 +63,11 @@ def jsObj(keys: set[str], original_data: dict[str, str]):
     for key in keys:
         new_data[key] = original_data[key]
     return new_data
+
+
+
+def get_cache_or_error(key: str):
+    searched_cache = cache.get(key)
+    if searched_cache is None:
+        raise DataCacheNotCreated('Cache not created')
+    return searched_cache
