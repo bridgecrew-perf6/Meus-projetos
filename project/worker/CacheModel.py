@@ -4,10 +4,10 @@ Cache model
 
 MODEL = {
 
-    'index': 'list categories html',
+    'index': 'category list html',
     
     'categorias.category_slug': {
-        'category_slug': 'list projects by category html',
+        'category_slug': 'project list by category html',
     },
     
     'projetos.project_slug': {

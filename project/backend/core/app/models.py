@@ -9,7 +9,7 @@ class Project(Model):
     img = ImageField(verbose_name='Img', upload_to='project/%Y/%m/%d')
     project_url = TextField(verbose_name='Url do projeto', blank=True, null=True)
     github_url = TextField(verbose_name='Url do Github')
-    category = ForeignKey(Category, on_delete=CASCADE, verbose_name='Categoria')
+    category = ForeignKey(Category, related_name='projects', on_delete=CASCADE, verbose_name='Categoria')
 
     def __str__(self):
         return self.name

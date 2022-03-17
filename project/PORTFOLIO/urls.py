@@ -3,11 +3,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('categorias/', include('backend.categories.urls')),
     path('', include('backend.core.urls')),
+    path('worker/', include('worker.urls')),
 ]
 
 
