@@ -28,5 +28,19 @@ def create_cache():
 
 
 
-def update_cache():
-    pass
+def update_cache(*pages: str):
+    context = create_context()
+
+    for page in pages:
+        match page:
+            case 'index':
+                new_value = create_category_list_html(context['categories'])
+            case 'categorias.category_slug':
+                new_value = create_category_pages(context['categories'])
+            case 'projetos.project_slug':
+                new_value = create_project_pages(context['projects'])
+            case _:
+                raise ValueError(f'{page} not valid match case')
+
+        cache.set(page, new_value, None)
+    

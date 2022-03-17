@@ -1,4 +1,5 @@
 from django.contrib import admin
+from worker.views.manager import update_cache
 from .models import Category
 
 
@@ -13,3 +14,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_per_page = 50
     ordering = 'name',
     search_fields = 'name',
+
+    def save_model(self, request, obj, form, change):
+        super(CategoryAdmin, self).save_model(request, obj, form, change)
+        update_cache('index', 'categorias.category_slug')
