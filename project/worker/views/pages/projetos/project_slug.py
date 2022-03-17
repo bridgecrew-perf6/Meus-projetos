@@ -24,7 +24,7 @@ def create_project_url_html(project):
     html = f"""
     <div class="project-info">
         <label for="" class="project-label">Link projeto:</label>
-        <a  href="{ project.project_url }" class="project-name">{ project.project_url }</a>
+        <a  href="{ project.project_url }" class="project-name" target="_blank">{ project.project_url }</a>
     </div>
     """
     return html
@@ -44,7 +44,7 @@ def create_project_data_html(project):
     {project_url_html}
     <div class="project-info">
         <label for="" class="project-label">Link Github:</label>
-        <a href="{ project.github_url }" class="project-name">{ project.github_url }</a>
+        <a href="{ project.github_url }" class="project-name" target="_blank">{ project.github_url }</a>
     </div>
     """
     return html
