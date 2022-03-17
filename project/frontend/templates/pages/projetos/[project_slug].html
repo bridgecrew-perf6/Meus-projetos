@@ -8,24 +8,6 @@
 
 {% block body %}
 <main>
-    <nav class="bar-navigation">
-        <a href="/">Projetos</a> &gt; <a href="/categorias/{{ category.slug }}">{{ category.name }}</a> &gt; <a href="/projetos/{{ project.slug }}">{{ project.name }}</a>
-    </nav>
-    <h1 class="title">{{ project.name }}</h1>
-    <div class="img-project">
-        <img src="{{ project.img.url }}" alt="img-project">
-    </div>
-    <div class="project-info">
-        <label for="" class="project-label">Categoria:</label>
-        <span class="project-name">{{ category.name }}</span>
-    </div>
-    <div class="project-info">
-        <label for="" class="project-label">Link projeto:</label>
-        <a  href="{{ project.project_url }}" class="project-name">{{ project.project_url }}</a>
-    </div>
-    <div class="project-info">
-        <label for="" class="project-label">Link Github:</label>
-        <a href="{{ project.github_url }}" class="project-name">{{ project.github_url }}</a>
-    </div>
+    {{ project_page }}
 </main>
 {% endblock %}

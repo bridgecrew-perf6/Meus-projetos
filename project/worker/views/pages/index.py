@@ -1,4 +1,4 @@
-from backend.categories import Category
+from django.utils.html import format_html
 
 
 def create_category_list_html(categories):
@@ -15,4 +15,4 @@ def create_category_list_html(categories):
         </a>
         """
 
-    return html
+    return format_html(html)

@@ -1,11 +1,12 @@
-from backend.categories import Category
+from django.utils.html import format_html
+
 
 
 def create_category_pages(categories):
     pages = {}
 
     for category in categories:
-        pages[category.slug] = create_bar_navigation(category) + create_project_list_box(category.projects.all())
+        pages[category.slug] = format_html(create_bar_navigation(category) + create_project_list_box(category.projects.all()))
     
     return pages
 

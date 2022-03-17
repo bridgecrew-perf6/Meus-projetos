@@ -6,21 +6,6 @@
 
 {% block body %}
 <main>
-    <nav class="bar-navigation">
-        <a href="/">Projetos</a> &gt; <a href="/categorias/{{ category.slug }}">{{ category.name }}</a>
-    </nav>
-
-
-    <div class="box-container">
-        {% for project in projects %}
-            <a class="box" href="/projetos/{{ project.slug }}">
-                <div class="box-img-container">
-                    <img src="{{ project.img.url }}" alt="project-img" class="box-img">
-                </div>
-                <h2 class="box-title">{{ project.name }}</h2>
-            </a>
-        {% endfor %}
-    </div>
-
+    {{ category_page }}
 </main>
 {% endblock %}

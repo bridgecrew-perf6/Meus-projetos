@@ -1,4 +1,4 @@
-from Fast.utils.main import jsObj
+from Fast.utils.main import get_cache_or_error, if_none, jsObj
 from django.shortcuts import get_object_or_404, render, redirect
 from backend.core import Project
 from . import Category
@@ -10,10 +10,5 @@ BP = 'pages/' # base path
 
 
 def category_view(request, category_slug):
-    category = get_object_or_404(Category, slug=category_slug)
-    projects = Project.objects.filter(category__slug=category_slug)
-    context = jsObj({
-        'category',
-        'projects',
-    }, vars())
+    context = {'category_page': if_none(get_cache_or_error('categorias.category_slug').get(category_slug), '')}
     return render(request, f'{BP}/categorias/[category_slug].html', context)

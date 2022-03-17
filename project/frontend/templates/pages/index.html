@@ -8,14 +8,7 @@
 <main>
     <h1 class="title">MEUS PROJETOS</h1>
     <div class="box-container">
-        {% for category in categories %}
-        <a class="box" href="/categorias/{{ category.slug }}">
-            <div class="box-img-container">
-                <img src="{{ category.img.url }}" alt="category-img" class="box-img">
-            </div>
-            <h2 class="box-title">{{ category.name }}</h2>
-        </a>
-        {% endfor %}
+        {{ category_list }}
     </div>
 </main>
 {% endblock %}

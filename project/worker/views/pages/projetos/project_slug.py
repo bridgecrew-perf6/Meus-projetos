@@ -1,8 +1,12 @@
+from django.utils.html import format_html
+
+
+
 def create_project_pages(projects):
     pages = {}
 
     for project in projects:
-        pages[project.slug] = create_navigation(project) + create_project_data_html(project)
+        pages[project.slug] = format_html(create_navigation(project) + create_project_data_html(project))
 
     return pages
 
