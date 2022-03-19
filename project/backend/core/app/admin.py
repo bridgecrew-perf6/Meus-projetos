@@ -18,4 +18,4 @@ class ProjectAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         super(ProjectAdmin, self).save_model(request, obj, form, change)
-        update_cache('projetos.project_slug')
+        update_cache('projetos.project_slug', 'categorias.category_slug')
