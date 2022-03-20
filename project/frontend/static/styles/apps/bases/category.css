@@ -1,5 +1,7 @@
-#container {
+main {
     padding-bottom: 7vh;
+    min-height: 90vh;
+    padding-inline: 0.8rem;
 }
 
 header.code {
