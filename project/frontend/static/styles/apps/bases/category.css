@@ -14,7 +14,7 @@ header.code img {
     width: 100%;
     object-fit: cover;
     margin: 0 auto;
-    max-width: 860px;
+    max-width: 1148px;
 }
 
 .footer{
@@ -29,7 +29,7 @@ footer {
     margin: 0 auto;
     padding-inline: 10%;
     margin: 0 auto;
-    max-width: 860px;
+    max-width: 1148px;
 }
 
 .footer-text {
