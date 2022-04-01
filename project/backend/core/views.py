@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from Fast.utils.main import get_cache_or_error, if_none
-from project.Fast.django.decorators.cache.main import static_page
+from Fast.django.decorators.cache.main import static_page
 
 BP = 'pages/' # base path
 

@@ -112,14 +112,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # My settings
 
-
-from memcacheify import memcacheify
-CACHES = memcacheify()
-
-STATIC_ROOT = Path(BASE_DIR, 'staticfiles')
+if not DEBUG:
+    from memcacheify import memcacheify
+    
+    
+    CACHES = memcacheify()
+    STATIC_ROOT = Path(BASE_DIR, 'staticfiles')
+    SECURE_SSL_REDIRECT = False if DEBUG else True
 
 STATIC_PAGE_CACHE_TIMEOUT = 60*60*2
-
 STATICFILES_DIRS = [Path(BASE_DIR, 'frontend/static')]
 
 MEDIA_ROOT = Path(BASE_DIR,'frontend/media')

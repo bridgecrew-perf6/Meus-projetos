@@ -1,5 +1,5 @@
 from django.contrib import admin
-from project.Fast.django.decorators.cache.controler import renew_global_cache
+from Fast.django.decorators.cache.controler import renew_global_cache
 from worker.views.manager import update_cache
 from .models import Category
 
