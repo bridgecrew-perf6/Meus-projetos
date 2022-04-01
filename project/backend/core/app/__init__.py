@@ -7,5 +7,5 @@ class CoreConfig(AppConfig):
     verbose_name = 'core'
     label = 'core'
 
-    # def ready(self):
-    #     import backend.core.app.signals
+    def ready(self):
+        import backend.core.app.signals
