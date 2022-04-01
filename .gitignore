@@ -152,4 +152,5 @@ cython_debug/
 #.idea/
 
 # Project
-project/frontend/media
+project/frontend/media/project/
+project/frontend/media/categories/
