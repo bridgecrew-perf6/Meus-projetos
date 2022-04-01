@@ -1,6 +1,5 @@
 from pathlib import Path
 import django_on_heroku
-from memcacheify import memcacheify
 from decouple import config
 
 
@@ -112,7 +111,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # My settings
 
-if DEBUG:
+if not DEBUG:
+    from memcacheify import memcacheify
     CACHES = memcacheify()
 
 
