@@ -1,4 +1,7 @@
 from pathlib import Path
+import django_on_heroku
+from memcacheify import memcacheify
+from decouple import config
 
 
 
@@ -9,9 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 
-SECRET_KEY = 'django-insecure-wokh=&7)c048k@wg3ld64!1od$bl6w$c@0c8qiri_)o(&1^_k0'
+SECRET_KEY = config('SECRET_KEY')
 
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']
 
@@ -109,6 +112,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # My settings
 
+if DEBUG:
+    CACHES = memcacheify()
+
+
 STATICFILES_DIRS = [Path(BASE_DIR, 'frontend/static')]
 STATIC_ROOT = Path('static')
 MEDIA_ROOT = Path(BASE_DIR,'frontend/media')
@@ -117,3 +124,6 @@ ACCOUNT_SESSION_REMEMBER = True
 
 
 AUTH_USER_MODEL = 'accounts.User'
+
+
+django_on_heroku.settings(locals())
