@@ -7,6 +7,9 @@ from collections.abc import Mapping
 from typing import Any
 # django
 from django.core.cache import cache
+from worker.views.manager import create_cache
+
+
 
 
 def simplification(obj_name: str):
@@ -69,5 +72,6 @@ def jsObj(keys: set[str], original_data: dict[str, str]):
 def get_cache_or_error(key: str):
     searched_cache = cache.get(key)
     if searched_cache is None:
-        raise DataCacheNotCreated('Cache not created')
+        create_cache()
+        searched_cache = cache.get(key)
     return searched_cache

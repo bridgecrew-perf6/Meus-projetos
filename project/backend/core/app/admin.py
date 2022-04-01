@@ -1,4 +1,5 @@
 from django.contrib import admin
+from project.Fast.django.decorators.cache.controler import renew_global_cache
 
 from worker.views.manager import update_cache
 from .models import Project
@@ -19,3 +20,5 @@ class ProjectAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         super(ProjectAdmin, self).save_model(request, obj, form, change)
         update_cache('projetos.project_slug', 'categorias.category_slug')
+        renew_global_cache(f'/projetos/{obj.slug}')
+        renew_global_cache(f'/categorias/{obj.category.slug}')

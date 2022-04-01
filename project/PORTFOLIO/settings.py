@@ -118,6 +118,7 @@ CACHES = memcacheify()
 
 STATIC_ROOT = Path(BASE_DIR, 'staticfiles')
 
+STATIC_PAGE_CACHE_TIMEOUT = 60*60*2
 
 STATICFILES_DIRS = [Path(BASE_DIR, 'frontend/static')]
 
