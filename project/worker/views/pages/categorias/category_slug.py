@@ -14,7 +14,7 @@ def create_category_pages(categories):
 def create_bar_navigation(category):
     html = f"""
     <nav class="bar-navigation">
-        <a href="/">Projetos</a> &gt; <a href="/categorias/{ category.slug }">{ category.name }</a>
+        <a href="/">Categorias</a> &gt; <a href="/categorias/{ category.slug }">{ category.name }</a>
     </nav>
     """
     return html

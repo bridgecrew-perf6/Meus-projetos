@@ -14,7 +14,7 @@ def create_project_pages(projects):
 def create_navigation(project):
     html = f"""
     <nav class="bar-navigation">
-        <a href="/">Projetos</a> &gt; <a href="/categorias/{ project.category.slug }">{ project.category.name }</a> &gt; <a href="/projetos/{ project.slug }">{ project.name }</a>
+        <a href="/">Categorias</a> &gt; <a href="/categorias/{ project.category.slug }">{ project.category.name }</a> &gt; <a href="/projetos/{ project.slug }">{ project.name }</a>
     </nav>
     """
     return html
