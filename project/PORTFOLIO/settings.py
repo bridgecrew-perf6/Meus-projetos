@@ -122,7 +122,7 @@ if not DEBUG:
     
     
     CACHES = memcacheify()
-    STATIC_ROOT = config('STATIC_ROOT', default=BASE_DIR/'staticfiles')
+    STATIC_ROOT = Path('static')
     SECURE_SSL_REDIRECT = False if DEBUG else True
 
 STATIC_PAGE_CACHE_TIMEOUT = 60*60*2
