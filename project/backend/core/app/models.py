@@ -6,7 +6,7 @@ from backend.categories import Category
 class Project(Model):
     name = CharField(verbose_name='Nome', max_length=128)
     slug = SlugField(verbose_name='Url', max_length=256)
-    img = ImageField(verbose_name='Img', upload_to='project/%Y/%m/%d')
+    img = ImageField(verbose_name='Img', upload_to='projects/%Y/%m/%d')
     project_url = TextField(verbose_name='Url do projeto', blank=True, null=True)
     github_url = TextField(verbose_name='Url do Github')
     category = ForeignKey(Category, related_name='projects', on_delete=CASCADE, verbose_name='Categoria')

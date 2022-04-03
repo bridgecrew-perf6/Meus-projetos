@@ -33,6 +33,8 @@ INSTALLED_APPS = [
     'backend.accounts.app.AccountsConfig',
     # Others apps
     'comands.apps.ComandsConfig',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -117,13 +119,16 @@ STATICFILES_DIRS = [Path(BASE_DIR, 'frontend/static')]
 MEDIA_ROOT = Path(BASE_DIR,'frontend/media')
 MEDIA_URL = '/media/'
 
+
 if not DEBUG:
     from memcacheify import memcacheify
-    # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-    
     CACHES = memcacheify()
-    STATIC_ROOT = Path('static')
-    SECURE_SSL_REDIRECT = False if DEBUG else True
+    
+
+
+SECURE_SSL_REDIRECT = False if DEBUG else True
+
+STATIC_ROOT = Path('static')
 
 STATIC_PAGE_CACHE_TIMEOUT = 60*60*2
 
@@ -131,6 +136,15 @@ ACCOUNT_SESSION_REMEMBER = True
 
 
 AUTH_USER_MODEL = 'accounts.User'
+
+
+CLOUDINARY = {
+    'CLOUD_NAME': config('CLOUD_NAME'),
+    'API_KEY': config('API_KEY'),
+    'API_SECRET': config('API_SECRET'),
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 django_on_heroku.settings(locals())

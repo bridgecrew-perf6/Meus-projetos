@@ -153,3 +153,5 @@ cython_debug/
 
 # Project
 
+media/categories/
+media/projects/
