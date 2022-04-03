@@ -1,4 +1,3 @@
-from django.core.cache import cache
 from django.shortcuts import render
 from Fast.utils.main import get_cache_or_error, if_none
 from Fast.django.decorators.cache.main import static_page
@@ -8,7 +7,7 @@ BP = 'pages/' # base path
 
 @static_page
 def index(request):
-    context = {'category_list': get_cache_or_error('index'), 'cache': cache.get('index')}
+    context = {'category_list': get_cache_or_error('index')}
     return render(request, f'{BP}/index.html', context)
 
 
