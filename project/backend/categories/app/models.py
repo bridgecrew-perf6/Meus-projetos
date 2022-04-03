@@ -5,7 +5,7 @@ from django.db.models import (Model, CharField, DateTimeField, TextField, EmailF
 class Category(Model):
     name = CharField(verbose_name='Nome', max_length=128)
     slug = SlugField(verbose_name='Url', max_length=256)
-    img = ImageField(verbose_name='Img', upload_to='project/%Y/%m/%d')
+    img = ImageField(verbose_name='Img', upload_to='categories/%Y/%m/%d')
 
     def __str__(self):
         return self.name
