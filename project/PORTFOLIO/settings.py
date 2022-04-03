@@ -112,19 +112,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # My settings
 
+STATICFILES_DIRS = [Path(BASE_DIR, 'frontend/static')]
+
+MEDIA_ROOT = Path(BASE_DIR,'frontend/media')
+MEDIA_URL = '/media/'
+
 if not DEBUG:
     from memcacheify import memcacheify
     
     
     CACHES = memcacheify()
-    STATIC_ROOT = Path(BASE_DIR, 'staticfiles')
+    STATIC_ROOT = '/app/project/staticfiles'
     SECURE_SSL_REDIRECT = False if DEBUG else True
 
 STATIC_PAGE_CACHE_TIMEOUT = 60*60*2
-STATICFILES_DIRS = [Path(BASE_DIR, 'frontend/static')]
 
-MEDIA_ROOT = Path(BASE_DIR,'frontend/media')
-MEDIA_URL = '/media/'
 ACCOUNT_SESSION_REMEMBER = True
 
 
