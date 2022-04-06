@@ -31,7 +31,7 @@ def create_project_url_html(project):
 
 
 def create_project_data_html(project):
-    project_url_html = create_project_url_html(project) if hasattr(project, 'project_url') else ''
+    project_url_html = create_project_url_html(project) if project.project_url != '' else ''
     html = f"""
     <h1 class="title">{ project.name }</h1>
     <div class="img-project">
