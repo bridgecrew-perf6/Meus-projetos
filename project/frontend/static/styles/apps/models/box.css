@@ -15,8 +15,15 @@
     width: 18rem;
 }
 
-.box-img {
+.box-img-container {
     height: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-img {
+    max-height: 12rem;
     padding-block: 0.2rem;
     object-fit: cover;
     margin: 0 auto;
