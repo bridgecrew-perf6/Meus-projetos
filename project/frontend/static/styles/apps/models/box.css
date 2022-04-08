@@ -37,19 +37,7 @@
     padding-block: 0.6rem;
 }
 
-@media(max-width: 350px){
-    .box-img {
-        height: 10rem;
-    }
-    .box {
-        margin-inline: 0;
-    }
-}
-
 @media(max-width: 450px){
-    .box-img {
-        height: 10rem;
-    }
     .box {
         margin-inline: 0;
     }
