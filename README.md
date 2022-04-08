@@ -4,5 +4,5 @@
 
 <h2 style="margin-top: 30px;">Desenvolvimento</h2>
 
-<p>Neste site as páginas são geradas por funções python e salvas num cache global , consultar o banco de dados na apenas na primeira requisição</p>
+<p>Neste site as páginas são geradas por funções python e salvas num cache global, para consultar o banco de dados na apenas na primeira requisição</p>
 
